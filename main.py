@@ -1,6 +1,9 @@
-print("Toplama İşlemi") 
-sayi1 = int(input("1.Sayıyı Giriniz: "))  
-sayi2 = int(input("2.Sayıyı Giriniz: "))
-print("{} + {} = {}".format(sayi1, sayi2, sayi1+sayi2))
-print("merhaba")
-print("toplama işlemi")
+print("""╔════════════════════╗ 
+║İşlem Listesi       ║
+║                    ║ 
+║ 1. Toplama İşlemi  ║
+║ 2. Çıkarma İşlemi  ║
+║ 3. Çarpma İşlemi   ║
+║ 4. Bölme İşlemi    ║
+╚════════════════════╝
+""")
