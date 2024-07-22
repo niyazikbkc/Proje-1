@@ -1,9 +1,9 @@
 print("""╔════════════════════╗ 
-║İşlem Listesi       ║
+║       KONSOL       ║
 ║                    ║ 
-║ 1. Toplama İşlemi  ║
-║ 2. Çıkarma İşlemi  ║
-║ 3. Çarpma İşlemi   ║
-║ 4. Bölme İşlemi    ║
+║ 1. Hesap Makinesi  ║
+║ 2. Oyunlar         ║
+║ 3. Çizimler        ║
+║ 4.                 ║
 ╚════════════════════╝
 """)
