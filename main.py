@@ -15,3 +15,4 @@ if secim  == 'q':
 if secim == "1" : print("Hesap Makinesini Seçtiniz")
 if secim == "2" : print("Oyunları Seçtiniz")
 if secim == "3" : print("Çizimleri Seçtiniz")
+selam
