@@ -253,3 +253,5 @@ if secim == "2":
 
         else:
             print("Geçersiz Seçenek...")
+
+print("oyunlar")
