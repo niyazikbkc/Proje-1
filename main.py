@@ -1,6 +1,6 @@
 import random
+import math
 
-# Ana Menü
 print("""╔════════════════════╗ 
 ║       KONSOL       ║
 ║                    ║ 
@@ -12,10 +12,12 @@ print("""╔════════════════════╗
 ║ Seçiminizi Yapınız ║
 ╚════════════════════╝
 """)
+
 secim = input("Seçiminizi Yapın (Çıkış için 'q' ya basalım):")
 if secim == 'q':
     print("Çıkılıyor...")
     quit()
+
 if secim == "1":
     print("Hesap Makinesini Seçtiniz")
     print("""╔════════════════════╗ 
@@ -60,7 +62,7 @@ if secim == "1":
         else:
             print("Geçersiz Seçenek...")
 
-if secim == "2":
+elif secim == "2":
     print("Oyunları Seçtiniz")
     print("""╔════════════════════╗ 
 ║ Oyun Listesi       ║
@@ -76,7 +78,7 @@ if secim == "2":
             print("Çıkılıyor...")
             quit()
         elif islem == "1":
-            print("Mayın Tarlasını Seçtiniz ")
+            print("Mayın Tarlasını Seçtiniz")
 
             # Mayın Tarlası oyunu
             def minesweeper():
@@ -254,5 +256,120 @@ if secim == "2":
         else:
             print("Geçersiz Seçenek...")
 
-print("oyunlar")
-print()
+elif secim == "3":
+    print("Çizimleri Seçtiniz")
+    print("""╔════════════════════╗ 
+║ Çizim Listesi      ║
+║                    ║ 
+║ 1. Kare Çiz        ║
+║ 2. Üçgen Çiz       ║
+║ 3. Çember Çiz      ║
+╚════════════════════╝
+""")
+    while True:
+        islem = input("Çizim Seçiniz (Çıkış için 'q' ya basalım): ")
+        if islem == 'q':
+            print("Çıkılıyor...")
+            quit()
+        elif islem == "1":
+            print("Kare Çizme Seçtiniz")
+            def draw_square():
+                size = int(input("Karenin boyutunu giriniz: "))
+                for i in range(size):
+                    print("█ " * size)
+            draw_square()
+
+        elif islem == "2":
+            print("Üçgen Çizme Seçtiniz")
+            def draw_triangle():
+                size = int(input("Üçgenin yüksekliğini giriniz: "))
+                for i in range(size):
+                    print(" " * (size - i - 1) + "* " * (i + 1))
+            draw_triangle()
+
+        elif islem == "3":
+            print("Çember Çizme Seçtiniz")
+            def draw_circle():
+                radius = int(input("Çemberin yarıçapını giriniz: "))
+                for y in range((2 * radius) + 1):
+                    for x in range((2 * radius) + 1):
+                        if math.sqrt((x - radius) ** 2 + (y - radius) ** 2) < radius + 0.5:
+                            print("*", end=" ")
+                        else:
+                            print(" ", end=" ")
+                    print()
+            draw_circle()
+
+        else:
+            print("Geçersiz Seçenek...")
+
+elif secim == "4":
+    print("Not Hesabını Seçtiniz")
+    print("""╔════════════════════╗ 
+║ Not Hesap Listesi  ║
+║                    ║ 
+║ 1. Ortalama Hesapla║
+║ 2. Harf Notu Çevir  ║
+╚════════════════════╝
+""")
+    while True:
+        islem = input("Not Hesap Seçiniz (Çıkış için 'q' ya basalım): ")
+        if islem == 'q':
+            print("Çıkılıyor...")
+            quit()
+        elif islem == "1":
+            print("Ortalama Hesaplama Seçtiniz")
+            def calculate_average():
+                notlar = input("Notları giriniz (virgülle ayırarak): ").split(',')
+                notlar = [float(n) for n in notlar]
+                ortalama = sum(notlar) / len(notlar)
+                print(f"Ortalamanız: {ortalama:.2f}")
+            calculate_average()
+
+        elif islem == "2":
+            print("Harf Notu Çevirme Seçtiniz")
+            def convert_grade():
+                grade = float(input("Notu giriniz: "))
+                if 90 <= grade <= 100:
+                    print("Harf Notu: AA")
+                elif 85 <= grade < 90:
+                    print("Harf Notu: BA")
+                elif 80 <= grade < 85:
+                    print("Harf Notu: BB")
+                elif 75 <= grade < 80:
+                    print("Harf Notu: CB")
+                elif 70 <= grade < 75:
+                    print("Harf Notu: CC")
+                elif 65 <= grade < 70:
+                    print("Harf Notu: DC")
+                elif 60 <= grade < 65:
+                    print("Harf Notu: DD")
+                elif 50 <= grade < 60:
+                    print("Harf Notu: FD")
+                else:
+                    print("Harf Notu: FF")
+            convert_grade()
+
+        else:
+            print("Geçersiz Seçenek...")
+
+elif secim == "5":
+    print("Boy Kilo Endeksi Seçtiniz")
+    def calculate_bmi():
+        height = float(input("Boyunuzu (metre cinsinden) giriniz: "))
+        weight = float(input("Kilonuzu (kg cinsinden) giriniz: "))
+        bmi = weight / (height ** 2)
+        print(f"Vücut Kitle İndeksiniz: {bmi:.2f}")
+        if bmi < 18.5:
+            print("Kilo: Zayıf")
+        elif 18.5 <= bmi < 24.9:
+            print("Kilo: Normal")
+        elif 25 <= bmi < 29.9:
+            print("Kilo: Fazla Kilolu")
+        else:
+            print("Kilo: Obez")
+    calculate_bmi()
+
+else:
+    print("Geçersiz Seçenek...")
+
