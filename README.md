@@ -27,4 +27,5 @@ Konsolun Çizim Seçim Ekraanı
 <img src="resimler/Çizim Menüsü.png" alt="Örnek Resim"/>
 <br>
 <br>
+Konsolun Not Hesabı Ve Harf Notu Seçim Ekranı
 <img src="resimler/Not Hesabı Menüsü.png" alt="Örnek Resim"/>
